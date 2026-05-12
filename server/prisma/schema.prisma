@@ -1,0 +1,38 @@
+// This is your Prisma schema file
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  name      String
+  email     String   @unique
+  password  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("users")
+}
+
+model TireQuote {
+  id                String   @id @default(cuid())
+  company           String
+  brand             String
+  model             String?
+  unitPrice         Float?
+  totalPrice        Float?
+  paymentConditions String?
+  includedServices  String?
+  observations      String?
+  score             Float    @default(0)
+  category          String   @default("economy") // "economy" | "premium" | "mid-range"
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  @@map("tire_quotes")
+}
