@@ -5,6 +5,13 @@
 Desenvolvido com arquitetura full stack moderna, design SaaS premium e sistema de score automatizado para auxiliar na tomada de decisão na compra de pneus.
 
 ---
+## 🌐 Demo Online
+
+https://buscapneu.vercel.app
+
+### Login Demo
+Email: admin@buscapneu.com
+Senha: admin123
 
 ## ✨ Funcionalidades
 
