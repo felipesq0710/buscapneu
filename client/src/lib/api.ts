@@ -15,7 +15,10 @@ api.interceptors.response.use(
   (res) => res,
   (err) => {
     if (err.response?.status === 401) {
-  console.log('401 detectado')
+  localStorage.removeItem('buscapneu_token')
+  localStorage.removeItem('buscapneu_user')
+  localStorage.removeItem('buscapneu_auth')
+  window.location.href = '/login'
 }
     return Promise.reject(err)
   },
